@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Work Sans';
-  src: url('fonts/WorkSans-Medium.woff2') format('woff2'),
-  url('fonts/WorkSans-Medium.woff') format('woff'),
-  url('fonts/WorkSans-Medium.ttf') format('truetype');
+  src: url('../fonts/WorkSans-Medium.woff2') format('woff2'),
+  url('../fonts/WorkSans-Medium.woff') format('woff'),
+  url('../fonts/WorkSans-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -10,9 +10,9 @@
 
 @font-face {
   font-family: 'Work Sans';
-  src: url('fonts/WorkSans-Light.woff2') format('woff2'),
-  url('fonts/WorkSans-Light.woff') format('woff'),
-  url('fonts/WorkSans-Light.ttf') format('truetype');
+  src: url('../fonts/WorkSans-Light.woff2') format('woff2'),
+  url('../fonts/WorkSans-Light.woff') format('woff'),
+  url('../fonts/WorkSans-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -20,8 +20,9 @@
 
 @font-face {
     font-family: 'Abril Fatface';
-    src: url('AbrilFatface-Regular.woff2') format('woff2'),
-        url('AbrilFatface-Regular.woff') format('woff');
+    src: url('../fonts/AbrilFatface-Regular.woff2') format('woff2'),
+        url('../fonts/AbrilFatface-Regular.woff') format('woff'),
+        url('../fonts/AbrilFatface-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -29,9 +30,9 @@
 
 @font-face {
   font-family: 'Work Sans';
-  src: url('fonts/WorkSans-Bold.woff2') format('woff2'),
-  url('fonts/WorkSans-Bold.woff') format('woff'),
-  url('fonts/WorkSans-Bold.ttf') format('truetype');
+  src: url('../fonts/WorkSans-Bold.woff2') format('woff2'),
+  url('../fonts/WorkSans-Bold.woff') format('woff'),
+  url('../fonts/WorkSans-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
