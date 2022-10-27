@@ -31,32 +31,35 @@ if (formElement) {
             id: formData.get('email'),
             schema: 'dsid',
           },
-          consentId: '28b5bee0-9db8-40ec-840e-64eafbfb9ddd',
+          //consent ID for talent portal
+          consentId: 'e94d6ee3-24dd-46fa-8742-2c37adcc9cda',
           date: new Date().toISOString(),
         }),
     })
     .then((response) => {
       if (response.ok) {
         console.log(`consent registered`);
-      }
-    })
-    .then(result => {
-      console.log('Success:', result);
 
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+        // submit data
+        fetch('https://blindnet-connector-demo-staging.azurewebsites.net/form', {
+          method: 'POST',
+          body: formData
+        })
+        .then((response) => {
+          if (response.ok) {
+            console.log(`OK`);
+            window.location.href = './thanx.html';
+          }
+        })
+        .then(result => {
+          console.log('Success:', result);
 
-    // submit data
-    fetch('https://blindnet-connector-demo-staging.azurewebsites.net/form', {
-      method: 'POST',
-      body: formData
-    })
-    .then((response) => {
-      if (response.ok) {
-        console.log(`OK`);
-      window.location.href = './thanx.html';
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+
+
       }
     })
     .then(result => {
