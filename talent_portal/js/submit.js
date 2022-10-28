@@ -12,7 +12,14 @@
  *
  */
 
- const formElement = document.getElementById('form');
+ // prepopulate form fields
+
+ (new URL(window.location.href)).searchParams.forEach((x, y) =>
+    document.getElementById(y).value = x)
+
+ // handle form submission
+ 
+const formElement = document.getElementById('form');
 
 if (formElement) {
   formElement.addEventListener('submit', (event) => {

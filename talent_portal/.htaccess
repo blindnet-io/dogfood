@@ -1,0 +1,6 @@
+ErrorDocument 404 /404.html
+Redirect /apply /apply.html
+DirectoryIndex index.html
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
