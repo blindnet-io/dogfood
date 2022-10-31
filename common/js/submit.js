@@ -38,16 +38,19 @@ if (formElement) {
 
 
     // register consent
+    const consent_headers = new Headers();
+    consent_headers.append('Authorization','Bearer eyJhbGciOiJFZERTQSIsInR5cCI6InVzZXIifQ.eyJhcHAiOiJjN2M1YTk5OC04YjdiLTQ3YTQtYjc3ZS1jY2ViYTU5NmJlYzQiLCJ1aWQiOiIiLCJleHAiOjE5OTk5OTk5OTl9.7aDXxvP_D3kriH3UxTV_3lxSUT8Za8VSkm4yHP3NoHCUrZ2DEj6gJYUEWJ_hLeojuB6PUaqpGi8XLUSqdv1eDg');
 
     fetch('https://devkit-pce-staging.azurewebsites.net/v0/user-events/consent', {
       method: 'POST',
+      headers: consent_headers,
       body: JSON.stringify({
           dataSubject: {
             id: email,
             schema: 'dsid',
           },
           //consent ID for talent portal
-          consentId: 'e94d6ee3-24dd-46fa-8742-2c37adcc9cda',
+          consentId: '75402f63-104d-4625-880e-2e333ac30660',
           date: new Date().toISOString(),
         }),
     })
