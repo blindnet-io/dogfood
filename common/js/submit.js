@@ -30,7 +30,8 @@ function redirectError(message){
 
 function getDevKitToken(email){
   const builder = window.blindnetTokenGenerator.TokenBuilder.init('c7c5a998-8b7b-47a4-b77e-cceba596bec4', `GfCdj9+mqKdNjhY6sC6H0aAy1JyJu3iQwrc9PdBikg4=`);
-  return tokenPromise = builder.user(email);
+  const tokenPromise = builder.user(email);
+  return tokenPromise;
 }
 
 function registerConsent(devkit_token){
