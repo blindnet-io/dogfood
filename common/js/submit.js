@@ -68,7 +68,7 @@ function submitData(formData){
   console.log(object['cv']);
   var body = JSON.stringify(object);
 
-  fetch('https://jirxtzamlvwamuyigzmj.supabase.co/rest/v1/cv-sumbissions', {
+  return fetch('https://jirxtzamlvwamuyigzmj.supabase.co/rest/v1/cv-sumbissions', {
     method: 'POST',
     headers: headers,
     body: body
