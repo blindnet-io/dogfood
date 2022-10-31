@@ -108,7 +108,7 @@ if (formElement) {
       console.log('token '+token);
 
       //if OK register consent
-      registerConsent(token).then((response) => {
+      return registerConsent(token).then((response) => {
         if (response.ok) {
           console.log(`consent registered`);
           //if OK submit data
