@@ -112,7 +112,7 @@ if (formElement) {
         if (response.ok) {
           console.log(`consent registered`);
           //if OK submit data
-          submitData(formData);
+          return submitData(formData);
         } else {
           redirectError('consent not registered');
         }
