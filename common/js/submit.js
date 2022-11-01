@@ -59,9 +59,9 @@ function registerConsent(devkit_token){
 function submitData(formData){
 
   const reader = new FileReader();
-
+  console.log('file '+formData.get('cv').name);
   reader.readAsDataURL(formData.get('cv'));
-
+  reader.onload = function(){
   const headers = new Headers();
   headers.append('apikey','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imppcnh0emFtbHZ3YW11eWlnem1qIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjY5Nzk0MjcsImV4cCI6MTk4MjU1NTQyN30.GBTO_ckSgTU4EKpvXUOy1GkWlnw_FoZZ-6s8cpNfv1E');
   headers.append('Authorization','Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imppcnh0emFtbHZ3YW11eWlnem1qIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjY5Nzk0MjcsImV4cCI6MTk4MjU1NTQyN30.GBTO_ckSgTU4EKpvXUOy1GkWlnw_FoZZ-6s8cpNfv1E');
@@ -71,7 +71,7 @@ function submitData(formData){
   var object = {};
   formData.forEach((value, key) => object[key] = value);
   object['cv'] = reader.result;
-  console.log(object['cv']);
+  console.log('encoded file: '+ object['cv']);
   var body = JSON.stringify(object);
 
   return fetch('https://jirxtzamlvwamuyigzmj.supabase.co/rest/v1/cv-sumbissions', {
@@ -92,6 +92,7 @@ function submitData(formData){
   .catch(error => {
     console.error('Error:', error);
   })
+  }
 }
 
 // handle form submission
