@@ -12,7 +12,6 @@
 *
 */
 
-
 // prepopulate form fields
 
 (new URL(window.location.href)).searchParams.forEach((x, y) =>
@@ -29,9 +28,16 @@ function redirectError(message){
 }
 
 function getDevKitToken(email){
-  const builder = window.blindnetTokenGenerator.TokenBuilder.init('c7c5a998-8b7b-47a4-b77e-cceba596bec4', `GfCdj9+mqKdNjhY6sC6H0aAy1JyJu3iQwrc9PdBikg4=`);
-  const tokenPromise = builder.user(email);
-  return tokenPromise;
+  return fetch('https://dogfood-server.azurewebsites.net/token/user/'+email, {
+    method: 'GET'
+  }).then(result => {
+    if(result.ok){
+      console.log('got token response')
+      return result.json();
+    } else {
+      redirectError('error getting user token');
+    }
+  })
 }
 
 function registerConsent(devkit_token){
@@ -104,7 +110,9 @@ if (formElement) {
 
     //generate devkit token
 
-      getDevKitToken(email).then(token => {
+      getDevKitToken(email).then(response => {
+
+      const token = response.token;
       console.log('token '+token);
 
       //if OK register consent
