@@ -25,6 +25,8 @@
   <!--analitics-->
   <script defer data-domain="dogfood.blindnet.io" src="https://plausible.io/js/plausible.js"></script>
 
+  <!--devkit token generator-->
+  <script src="https://cdn.jsdelivr.net/gh/blindnet-io/demo-token-generator@devkit/lib/index.umd.js"></script>
 
 </head>
 <body>
@@ -49,16 +51,20 @@
             </select>
 
             <div class="form-floating mb-3">
-              <input type="name" name="name" class="form-control" id="floatingName" placeholder="Elon Musk">
+              <input type="text" name="name" class="form-control" id="floatingName" placeholder="Elon Musk">
               <label for="floatingName">Name</label>
             </div>
             <div class="form-floating mb-3">
               <input type="email" name="email" class="form-control" id="floatingEmail" placeholder="name@example.com" required>
-              <label for="floatingEmail">Email address</label>
+              <label for="floatingEmail">Email address*</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" name="github" class="form-control" id="github" placeholder="https://github.com/milstan">
+              <label for="github">GitHub profile</label>
             </div>
             <div>
-              <label for="formFileLg" class="form-label">Please provide your CV</label>
-              <input class="form-control form-control-lg unifont" name="cv" id="formFileLg" type="file" required>
+              <label for="formFileLg" class="form-label">Please provide your CV*</label>
+              <input class="form-control form-control-lg unifont" name="cv" id="formFileLg" type="file" accept="application/pdf" required>
             </div>
 
             <div class="form-check form-switch mt-3 text-start">
