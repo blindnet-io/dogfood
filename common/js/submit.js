@@ -109,8 +109,7 @@ if (formElement) {
     var cv = formData.get('cv');
 
 
-    //generate devkit token
-
+      //generate devkit token
       getDevKitToken(email).then(response => {
 
       const token = response.token;
