@@ -34,7 +34,25 @@
       <div class="row mt-5 align-items-center justify-content-center">
         <div class="col-lg-8 col-md-10 text-center">
           <h2 id="priv-request">Privacy Portal</h2>
-          <bldn-priv-request data-categories="[&quot;contact&quot;, &quot;name&quot;, &quot;uid&quot;, &quot;other-data&quot;]"></bldn-priv-request>
+
+          <div id="not-logged-in">
+            <button id="btn-login" type="button" class="btn btn-light unifont" onclick="login()">
+              Identify yourself to make a personal request
+            </button>
+          </div>
+
+          <div id="logged-in" hidden>
+            <div id="div-logout">
+              Making a request as <span id="ipt-user-profile"></span>.
+              <button id="btn-logout" class="btn btn-light unifont" onclick="logout()">Log out</button>
+              <input id="token" type="hidden" />
+            </div>
+          </div>
+
+          <bldn-priv-request id="devkit-prci"
+            data-categories="[&quot;contact&quot;, &quot;name&quot;, &quot;uid&quot;, &quot;other-data&quot;]">
+          </bldn-priv-request>
+
         </div>
       </div>
       <div class="row mt-5 align-items-center justify-content-center">
